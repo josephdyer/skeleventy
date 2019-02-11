@@ -1,5 +1,7 @@
 # Skeleventy
 
+A skeleton boilerplate built with Eleventy.
+
 ## Requirements
 
 Node `>=` v8.9.0
@@ -10,5 +12,5 @@ Node `>=` v8.9.0
 npm install
 ```
 ```
-gulp dev
+npm run dev
 ```
