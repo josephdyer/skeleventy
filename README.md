@@ -11,6 +11,5 @@ Node `>=` v8.9.0
 ```
 npm install
 ```
-```
-npm run dev
-```
+
+`cd` into your project folder and `npm run dev` to start the development server and run gulp.

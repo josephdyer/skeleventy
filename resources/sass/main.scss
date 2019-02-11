@@ -1,0 +1,22 @@
+
+//==========  Imports  ==========//
+
+// Import Tailwind preflight
+@tailwind preflight;
+
+
+// Import our custom base styles
+@import 'base/';
+
+
+// Import Tailwind components
+@tailwind components;
+
+
+// Import our custom component styles
+@import 'components/';
+
+
+// Import Tailwind utilities
+// TailwindCSS recommends leaving utilities till last to ensure they aren't overwritten.
+@tailwind utilities;

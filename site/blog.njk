@@ -1,0 +1,47 @@
+---
+layout: default
+meta_title: Blog
+meta_description: Blog page description
+body_class: blog
+title: The Skeleventy Blog
+---
+
+<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
+
+    <section id="container-centre" class="flex-1 container ml-auto mr-auto">
+
+        <h1 class="page-title text-5xl mb-16">{{ title }}</h1>
+
+        <div class="content posts">
+
+            {% for post in collections.blog %}
+                <article class="post mb-24">
+
+                    <h2 class="text-4xl mb-3"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+
+                    <div class="text-sm text-grey-dark flex">
+
+                        <p class="author">By {{ site.author }}</p>
+
+                        <p class="px-2">—</p>
+
+                        <time datetime="{{ post.date }}">
+                            {{ post.date | dateDisplay }}
+                        </time>
+
+                    </div>
+
+                    {% if post.data.excerpt %}
+                        <p>{{ post.data.excerpt }}</p>
+                    {% endif %}
+
+                </article>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</main>
+
+

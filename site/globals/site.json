@@ -1,0 +1,10 @@
+{
+    "name": "Skeleventy",
+    "email": "hello@maxpower.com",
+    "author": "Max Power",
+    "social": {
+        "facebook": "https://www.facebook.com",
+        "twitter": "https://www.twitter.com",
+        "linkedin": "https://www.linkedin.com"
+    }
+}

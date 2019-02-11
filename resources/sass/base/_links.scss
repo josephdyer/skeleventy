@@ -1,0 +1,13 @@
+
+//==========  Links ==========//
+.transition {
+    transition: 0.25s all ease-out;
+}
+
+a {
+    @apply no-underline text-pink-dark transition;
+
+    &:hover {
+        @apply text-pink;
+    }
+}

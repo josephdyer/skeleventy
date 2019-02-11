@@ -1,0 +1,15 @@
+<nav id="nav" class="nav flex">
+
+    <ul class="menu flex flex-col md:flex-row items-center list-reset text-base">
+        {% for item in navigation.main %}
+        <li class="level-1 mb-4 md:mr-4 md:mb-0">
+            <a href="{{ item.url | safe }}" class="link font-bold text-white {% if page.url == item.url %}active text-pink-dark{% endif %}
+            ">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+        <li>
+            <a class="inline-block rounded-full md:ml-2 py-3 px-6 text-white font-bold bg-pink-dark hover:bg-white" href="https://gitlab.com/joedyer1989/skeleventy" target="_blank">Download</a>
+        </li>
+    </ul>
+
+</nav>

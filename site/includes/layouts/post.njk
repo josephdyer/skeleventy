@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
+
+    <section id="container-centre" class="flex-1 container ml-auto mr-auto lg:px-32">
+
+        <div class="post-header mb-12 md:mb-20">
+
+            <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">{{ title }}</h1>
+
+            <div class="text-sm md:text-base text-grey-dark flex justify-center">
+
+                <p class="author">By {{ site.author }}</p>
+
+                <p class="px-2">—</p>
+
+                <time datetime="{{ date }}">
+                    {{ date | dateDisplay }}
+                </time>
+
+                <p class="px-2">—</p>
+
+                <p class="category">Posted in <a href="/">{{ category }}</a></p>
+
+            </div>
+
+            {# featured post image #}
+            {% if featured_image %}
+            <figure class="mt-20">
+                <img src="{{ featured_image }}">
+                {% if image_caption %}
+                <figcaption class="text-center text-sm italic text-grey-dark mt-4">{{ image_caption }}</figcaption>
+                {% endif %}
+            </figure>
+            {% endif %}
+
+        </div>
+
+        <div class="content post">
+
+            {{ content | safe }}
+
+        </div>
+
+    </section>
+
+</main>
