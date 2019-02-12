@@ -67,7 +67,6 @@ gulp.task('tailwind:init', run('./node_modules/.bin/tailwind init tailwind.confi
 gulp.task('css:compile', function() {
     return gulp.src(paths.sass.source)
         .pipe(plumber({ errorHandler: onError }))
-        .pipe(sassImport())
         .pipe(sass())
         .pipe(postcss([
             tailwindcss('./tailwind.config.js')
