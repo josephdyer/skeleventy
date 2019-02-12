@@ -6,7 +6,7 @@
 
 
 // Import our custom base styles
-@import 'base/';
+@import 'base/all';
 
 
 // Import Tailwind components
@@ -14,7 +14,7 @@
 
 
 // Import our custom component styles
-@import 'components/';
+@import 'components/all';
 
 
 // Import Tailwind utilities

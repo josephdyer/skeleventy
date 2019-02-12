@@ -171,7 +171,7 @@ gulp.task('dev', ['css', 'js:compile'], function () {
  * Compile CSS [PREFLIGHT]
  */
 gulp.task('css:compile:preflight', function () {
-    return gulp.src('./resources/sass/main.scss')
+    return gulp.src(paths.sass.source)
         .pipe(sass())
         .pipe(postcss([
             tailwindcss('./tailwind.config.js'),
@@ -203,6 +203,7 @@ gulp.task('css:compile:preflight', function () {
                     'h3',
                     'p',
                     'blockquote',
+                    'intro'
                 ],
             })
         ]))
