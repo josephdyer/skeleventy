@@ -5,7 +5,6 @@
  */
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    sassImport = require('gulp-sass-import'),
     postcss = require('gulp-postcss'),
     rename = require('gulp-rename'),
     cleanCSS = require('gulp-clean-css'),
