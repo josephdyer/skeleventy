@@ -742,6 +742,10 @@ h3 {
   font-style: italic;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
