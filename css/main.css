@@ -404,7 +404,7 @@ button,
 a {
   text-decoration: none;
   color: #eb5286;
-  transition: .25s all ease-out;
+  transition: .25s color ease-out;
 }
 
 a:hover {
