@@ -14,9 +14,9 @@ npm install
 
 `cd` into your project folder and `npm run dev` which will start the development server and Gulp. Eleventy has baked in browsersync and watches all files for changes.
 
-## Folder Architecture
+## Folder Structure
 
-The `site` folder contains all our pages and content which Eleventy will watch and compile into HTML for us.
+The `site` folder contains all the templates, pages and content which Eleventy will watch and compile into HTML for us.
 
 A `globals` folder lives within this, where as the name suggests - globally available files live. There's a `site.json` file for general site stuff (name, author, email etc), `navigation.json` which we use as reference to loop over in our template to generate our nav and a `helpers.js` which just contains an environment helper.
 
