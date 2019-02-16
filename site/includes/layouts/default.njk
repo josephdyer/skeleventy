@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
     <title>{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}</title>
+
+    {# call main.css in development mode #}
     {% if helpers.environment == "development" %}
     <link rel="stylesheet" href="/css/main.css">
     {% else %}
+    {# otherwise, call main.min.css #}
     <link rel="stylesheet" href="/css/main.min.css">
     {% endif %}
+
     <link rel="icon" type="image/png" href="/images/favicon.ico">
 </head>
 
@@ -17,19 +21,22 @@
 
     <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
 
+        {# include header #}
         {% include "components/header.njk" %}
 
         {{ content | safe }}
 
+        {# include footer #}
         {% include "components/footer.njk" %}
 
-        {% if helpers.environment == "development" %}
-        <script src="/javascript/main.js"></script>
-        {% else %}
-        <script src="/javascript/main.min.js"></script>
-        {% endif %}
-
     </div>
+
+    {# scripts #}
+    {% if helpers.environment == "development" %}
+    <script src="/javascript/main.js"></script>
+    {% else %}
+    <script src="/javascript/main.min.js"></script>
+    {% endif %}
 
 </body>
 </html>
