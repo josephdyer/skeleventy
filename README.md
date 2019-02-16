@@ -30,4 +30,4 @@ Purge will also run via the build command and will cross reference all of Tailwi
 
 `npm run build` to minify scripts and run Purgecss over your styles.
 
-Go build some cool stuff and put it on Netlify! :)
+Feel free to adapt this as you wish! Go build some cool stuff and put it on Netlify - seriously it's the future! :)
