@@ -6,36 +6,51 @@ body_class: blog
 title: The Skeleventy Blog
 ---
 
-<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
+<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20 bg-purple-darkest">
 
     <section id="container-centre" class="flex-1 container ml-auto mr-auto">
 
-        <h1 class="page-title text-5xl mb-16">{{ title }}</h1>
+        <h1 class="page-title text-white text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">{{ title }}</h1>
 
-        <div class="content posts">
+        <div class="posts md:flex flex-1">
 
             {% for post in collections.blog %}
-                <article class="post mb-24">
 
-                    <h2 class="text-4xl mb-3"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                <article class="post mb-8 mx-4 flex-1 bg-white rounded-lg shadow-lg">
 
-                    <div class="text-sm text-grey-dark flex">
+                    {# featured post image & category #}
+                    {% if post.data.featured_image %}
 
-                        <p class="author">By {{ site.author }}</p>
+                    <figure class="relative">
 
-                        <p class="px-2">—</p>
+                        <p class="absolute pin-b pin-l bg-pink-dark px-4 py-2 text-white text-xs font-bold rounded m-6">{{ post.data.category }}</p>
 
-                        <time datetime="{{ post.date }}">
-                            {{ post.date | dateDisplay }}
-                        </time>
+                        <img src="{{ post.data.featured_image }}" alt="{{ post.data.image_caption }}" class="block rounded-t-lg">
+
+                    </figure>
+
+                    {% endif %}
+
+                    <div class="p-8">
+
+                        <h2 class="text-3xl mb-6"><a class="block text-purple-darker" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+
+                        <div class="text-sm text-grey-dark md:flex mb-4">
+
+                            <p class="author">By {{ site.author }}</p>
+
+                            <p class="hidden md:block px-2">—</p>
+
+                            <time datetime="{{ post.date }}">
+                                {{ post.date | dateDisplay }}
+                            </time>
+
+                        </div>
 
                     </div>
 
-                    {% if post.data.excerpt %}
-                        <p>{{ post.data.excerpt }}</p>
-                    {% endif %}
-
                 </article>
+
             {% endfor %}
 
         </div>

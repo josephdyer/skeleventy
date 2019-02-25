@@ -468,10 +468,6 @@ h3 {
   }
 }
 
-.header {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23402f5c' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
 .list-reset {
   list-style: none;
   padding: 0;
@@ -483,6 +479,10 @@ h3 {
 
 .bg-grey-lighter {
   background-color: #f1f5f8;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 
 .bg-purple-darkest {
@@ -501,16 +501,33 @@ h3 {
   background-color: #fa7ea8;
 }
 
+.border-purple-darker {
+  border-color: #382b5f;
+}
+
 .rounded {
   border-radius: .25rem;
+}
+
+.rounded-lg {
+  border-radius: .5rem;
 }
 
 .rounded-full {
   border-radius: 9999px;
 }
 
+.rounded-t-lg {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
 .border {
   border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .block {
@@ -519,6 +536,10 @@ h3 {
 
 .inline-block {
   display: inline-block;
+}
+
+.hidden {
+  display: none;
 }
 
 .flex {
@@ -565,8 +586,17 @@ h3 {
   line-height: 1.5;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .m-auto {
   margin: auto;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mx-auto {
@@ -576,10 +606,6 @@ h3 {
 
 .mb-2 {
   margin-bottom: .5rem;
-}
-
-.mb-3 {
-  margin-bottom: .75rem;
 }
 
 .mt-4 {
@@ -598,6 +624,10 @@ h3 {
   margin-bottom: 1.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -608,10 +638,6 @@ h3 {
 
 .mt-20 {
   margin-top: 5rem;
-}
-
-.mb-24 {
-  margin-bottom: 6rem;
 }
 
 .mr-auto {
@@ -634,6 +660,10 @@ h3 {
   outline: 0;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .py-2 {
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -654,14 +684,14 @@ h3 {
   padding-right: .75rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .py-10 {
@@ -674,20 +704,28 @@ h3 {
   padding-right: 3rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
 .pb-8 {
   padding-bottom: 2rem;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
+.absolute {
+  position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.pin-b {
+  bottom: 0;
+}
+
+.pin-l {
+  left: 0;
+}
+
+.shadow-lg {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
 }
 
 .focus\:shadow-outline:focus {
@@ -714,8 +752,16 @@ h3 {
   color: #21183c;
 }
 
+.text-purple-darker {
+  color: #382b5f;
+}
+
 .text-pink-dark {
   color: #eb5286;
+}
+
+.text-xs {
+  font-size: .75rem;
 }
 
 .text-sm {
@@ -732,10 +778,6 @@ h3 {
 
 .text-3xl {
   font-size: 1.875rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
 }
 
 .text-5xl {
@@ -760,6 +802,10 @@ h3 {
 }
 
 @media (min-width: 768px) {
+
+  .md\:block {
+    display: block;
+  }
 
   .md\:flex {
     display: flex;
@@ -789,12 +835,13 @@ h3 {
     margin-bottom: 5rem;
   }
 
-  .md\:pb-0 {
-    padding-bottom: 0;
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
-  .md\:pb-32 {
-    padding-bottom: 8rem;
+  .md\:pb-0 {
+    padding-bottom: 0;
   }
 
   .md\:text-center {
@@ -811,6 +858,10 @@ h3 {
 }
 
 @media (min-width: 992px) {
+
+  .lg\:mb-24 {
+    margin-bottom: 6rem;
+  }
 
   .lg\:px-0 {
     padding-left: 0;

@@ -28,17 +28,24 @@ layout: default
 
             {# featured post image #}
             {% if featured_image %}
+
             <figure class="mt-20">
-                <img src="{{ featured_image }}">
+
+                <img src="{{ featured_image }}" alt="{{ image_caption }}">
+
                 {% if image_caption %}
+
                 <figcaption class="text-center text-sm italic text-grey-dark mt-4">{{ image_caption }}</figcaption>
+
                 {% endif %}
+
             </figure>
+
             {% endif %}
 
         </div>
 
-        <div class="content post">
+        <div class="content post px-6 md:px-16">
 
             {{ content | safe }}
 
