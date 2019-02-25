@@ -14,7 +14,9 @@ Node `>=` v8.9.0
 npm install
 ```
 
-`cd` into your project folder and `npm run dev` which will start the development server and Gulp. Eleventy has baked in browsersync and watches all files for changes.
+`cd` into your project folder and `npm run dev` which will start the development server and Gulp. Eleventy has browser hot reloading baked in and will watch all files for changes.
+
+For those of you on Windows, [see Daniel Schildt's potential fix](https://github.com/josephdyer/skeleventy/issues/2#issuecomment-465754702) for the environment helper.
 
 ## Folder Structure
 
