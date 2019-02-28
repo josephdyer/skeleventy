@@ -16,7 +16,7 @@ title: The Skeleventy Blog
 
             {% for post in collections.blog %}
 
-                <article class="post mb-8 mx-4 flex-1 bg-white rounded-lg shadow-lg">
+                <article class="post mb-8 mx-4 flex-1 bg-white rounded-lg overflow-hidden">
 
                     {# featured post image & category #}
                     {% if post.data.featured_image %}
@@ -37,7 +37,7 @@ title: The Skeleventy Blog
 
                         <div class="text-sm text-grey-dark md:flex mb-4">
 
-                            <p class="author">By {{ site.author }}</p>
+                            <p class="author">By {{ site.author.name }}</p>
 
                             <p class="hidden md:block px-2">—</p>
 

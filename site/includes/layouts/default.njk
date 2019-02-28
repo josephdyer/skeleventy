@@ -1,20 +1,19 @@
 <!doctype html>
 <html lang="en" class="min-h-full antialiased">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
-    <title>{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}</title>
+    {# include our meta tags #}
+    {% include "components/meta.njk" %}
 
-    {# call main.css in development mode #}
+    {# include main.css in development mode #}
     {% if helpers.environment == "development" %}
     <link rel="stylesheet" href="/css/main.css">
     {% else %}
-    {# otherwise, call main.min.css #}
+    {# otherwise, use main.min.css #}
     <link rel="stylesheet" href="/css/main.min.css">
     {% endif %}
 
-    <link rel="icon" type="image/png" href="/images/favicon.ico">
+    {# favicon #}
+    <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
 </head>
 
 <body {% if body_class %} id="{{ body_class }}"{% endif %} class="min-h-full font-sans text-lg text-purple-darkest leading-normal">
@@ -24,6 +23,7 @@
         {# include header #}
         {% include "components/header.njk" %}
 
+        {# include content #}
         {{ content | safe }}
 
         {# include footer #}
@@ -31,7 +31,7 @@
 
     </div>
 
-    {# scripts #}
+    {# include scripts #}
     {% if helpers.environment == "development" %}
     <script src="/javascript/main.js"></script>
     {% else %}
