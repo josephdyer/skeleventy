@@ -29,7 +29,7 @@ layout: default
             {# featured post image #}
             {% if featured_image %}
 
-            <figure class="mt-20">
+            <figure class="mt-10 md:mt-20">
 
                 <img src="{{ featured_image }}" alt="{{ image_caption }}">
 
@@ -45,7 +45,7 @@ layout: default
 
         </div>
 
-        <div class="content post px-6 md:px-16">
+        <div class="content post md:px-16">
 
             {{ content | safe }}
 
