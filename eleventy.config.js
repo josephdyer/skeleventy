@@ -1,12 +1,15 @@
-const htmlmin = require("html-minifier");
+const htmlmin = require("html-minifier")
 
-module.exports = function (eleventyConfig) {
+module.exports = eleventyConfig => {
 
-    // Add a date formatter filter to Nunjucks
-    eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js"));
+    // Add a readable date formatter filter to Nunjucks
+    eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js"))
+
+    // Add a HTML timestamp formatter filter to Nunjucks
+    eleventyConfig.addFilter("htmlDateDisplay", require("./filters/timestamp.js"))
 
     // Minify our HTML
-    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
         if( outputPath.endsWith(".html") ) {
             let minified = htmlmin.minify(content, {
                 useShortDoctype: true,
@@ -16,21 +19,21 @@ module.exports = function (eleventyConfig) {
             return minified;
         }
         return content;
-    });
+    })
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-        return collection.getFilteredByTag('blog').reverse();
-    });
+        return collection.getFilteredByTag('blog').reverse()
+    })
 
     // Layout aliases
-    eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
-    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+    eleventyConfig.addLayoutAlias('default', 'layouts/default.njk')
+    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
 
     // Include our static assets
-    eleventyConfig.addPassthroughCopy("css");
-    eleventyConfig.addPassthroughCopy("javascript");
-    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("css")
+    eleventyConfig.addPassthroughCopy("javascript")
+    eleventyConfig.addPassthroughCopy("images")
 
     return {
         templateFormats: ["md", "njk"],
@@ -44,6 +47,6 @@ module.exports = function (eleventyConfig) {
             includes: 'includes',
             data: 'globals'
         }
-    };
+    }
 
-};
+}
