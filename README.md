@@ -2,7 +2,19 @@
 
 # Skeleventy
 
-A skeleton boilerplate built with Eleventy. Check out [Skeleventy](https://skeleventy.netlify.com/)
+A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skeleventy](https://skeleventy.netlify.com/)!
+
+_Optional_ Gulp 4 upgrade - see this [branch](https://github.com/josephdyer/skeleventy/tree/gulp-upgrade/gulpfile-upgrade).
+
+## Features
+
+- Build sites faster, with the power of Eleventy, TailwindCSS and SCSS
+- Gulp build pipeline to watch, concatenate and compile styles and scripts
+- HTML minifier
+- Purgecss for removing unused CSS
+- ES6 support with Babel
+- SEO friendly pages (including open graph and twitter meta)
+- A simple, elegant blog
 
 ## Requirements
 
@@ -14,15 +26,17 @@ Node `>=` v8.9.0
 npm install
 ```
 
-`cd` into your project folder and `npm run dev` which will start the development server and Gulp. Eleventy has browser hot reloading baked in and will watch all files for changes.
+`cd` into your project folder and type the `npm run dev` command into terminal, to start the development server and Gulp. Eleventy has baked in hot reloading and will files for changes.
 
-For those of you on Windows, [see Daniel Schildt's potential fix](https://github.com/josephdyer/skeleventy/issues/2#issuecomment-465754702) for the environment helper.
+_For those of you on Windows, [see Daniel Schildt's potential fix](https://github.com/josephdyer/skeleventy/issues/2#issuecomment-465754702) for the environment helper._
 
 ## Folder Structure
 
-The `site` folder contains all the templates, pages and content which Eleventy will watch and compile into HTML for us.
+The `site` folder contains all the templates, pages and content, which Eleventy will watch and parse into HTML for us.
 
-A `globals` folder lives within this, where as the name suggests - globally available files live. There's a `site.json` file for general site stuff (name, author, email etc), `navigation.json` which we use as reference to loop over in our template to generate our nav and a `helpers.js` which just contains an environment helper.
+Within this, lives a `globals` folder, where you'll find a `site.json` file - for general site config stuff e.g name, author, email, social media...etc.
+
+A `navigation.json`, which we loop over in the template, to generate our nav and a `helpers.js` which just contains a simple environment helper.
 
 Uncompiled SCSS and JS reside in the `resources` folder - Gulp will be watching these folders for any changes (you should restart the server when creating new partials).
 
@@ -32,6 +46,6 @@ Purge will also run via the build command and will cross reference all of Tailwi
 
 ## Ready to deploy?
 
-`npm run build` to minify scripts and run Purgecss over your styles.
+Type the `npm run build` command to minify scripts, styles and run Purgecss.
 
-Feel free to adapt this as you wish! Go build some cool stuff and put it on Netlify - seriously it's the future! :)
+Feel free to adapt this as you wish! Go build some cool stuff and put it on Netlify - seriously it's the future!
