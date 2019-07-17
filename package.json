@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Skeleventy - A skeleton boilerplate built with Eleventy",
 	"scripts": {
-		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp dev",
+		"dev": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve & gulp",
 		"build": "gulp build && eleventy --config=eleventy.config.js"
 	},
 	"repository": {
@@ -13,11 +13,11 @@
 	"author": "Joseph Dyer",
 	"license": "MIT",
 	"devDependencies": {
-		"@11ty/eleventy": "^0.7.1",
+		"@11ty/eleventy": "^0.8.3",
 		"@babel/core": "^7.2.0",
 		"@babel/preset-env": "^7.3.1",
 		"@fullhuman/postcss-purgecss": "^1.1.0",
-		"gulp": "^3.9.1",
+		"gulp": "^4.0.0",
 		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "^3.10.0",
 		"gulp-concat": "^2.6.1",
@@ -25,7 +25,6 @@
 		"gulp-plumber": "^1.2.0",
 		"gulp-postcss": "^7.0.1",
 		"gulp-rename": "^1.2.3",
-		"gulp-run-command": "^0.0.9",
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify": "^3.0.1",
 		"html-minifier": "^3.5.21",
