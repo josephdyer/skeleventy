@@ -4,8 +4,6 @@
 
 A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skeleventy](https://skeleventy.netlify.com/)!
 
-_Optional_ Gulp 4 upgrade - see this [branch](https://github.com/josephdyer/skeleventy/tree/gulp-upgrade/gulpfile-upgrade).
-
 ## Features
 
 - Build sites faster, with the power of Eleventy, TailwindCSS and SCSS
