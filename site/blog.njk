@@ -6,7 +6,7 @@ body_class: blog
 title: The Skeleventy Blog
 ---
 
-<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20 bg-purple-darkest">
+<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20 bg-purple-900">
 
     <section id="container-centre" class="flex-1 container ml-auto mr-auto">
 
@@ -23,7 +23,7 @@ title: The Skeleventy Blog
 
                     <figure class="relative">
 
-                        <p class="absolute pin-b pin-l bg-pink-dark px-4 py-2 text-white text-xs font-bold rounded m-6">{{ post.data.category }}</p>
+                        <p class="absolute bottom-0 left-0 bg-pink-500 px-4 py-2 text-white text-xs font-bold rounded m-6">{{ post.data.category }}</p>
 
                         <img src="{{ post.data.featured_image }}" alt="{{ post.data.image_caption }}" class="block rounded-t-lg">
 
@@ -33,9 +33,9 @@ title: The Skeleventy Blog
 
                     <div class="p-8">
 
-                        <h2 class="text-3xl mb-6"><a class="block text-purple-darker" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                        <h2 class="text-3xl mb-6"><a class="block text-purple-900 hover:text-pink-500" href="{{ post.url }}">{{ post.data.title }}</a></h2>
 
-                        <div class="text-sm text-grey-dark md:flex mb-4">
+                        <div class="text-sm text-gray-600 md:flex mb-4">
 
                             <p class="author">By {{ site.author.name }}</p>
 

@@ -6,9 +6,9 @@
 }
 
 a {
-    @apply no-underline text-pink-dark transition;
+    @apply no-underline text-pink-500 transition;
 
     &:hover {
-        @apply text-pink;
+        @apply text-purple-900;
     }
 }
