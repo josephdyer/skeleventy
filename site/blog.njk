@@ -16,18 +16,39 @@ title: The Skeleventy Blog
 
             {% for post in collections.blog %}
 
-                <article class="post mb-8 mx-4 flex-1 bg-white rounded-lg overflow-hidden">
+                <article class="article-card mb-8 mx-4 flex-1 bg-white rounded-lg overflow-hidden">
 
                     {# featured post image & category #}
                     {% if post.data.featured_image %}
 
-                    <figure class="relative">
+                        <a class="featured-image-link block relative overflow-hidden" href="{{ post.url }}">
 
-                        <p class="absolute bottom-0 left-0 bg-pink-500 px-4 py-2 text-white text-xs font-bold rounded m-6">{{ post.data.category }}</p>
+                            {# category link #}
+                            <ul class="absolute bottom-0 left-0 flex p-8 z-10">
 
-                        <img src="{{ post.data.featured_image }}" alt="{{ post.data.image_caption }}" class="block rounded-t-lg">
+                                {% for item in post.data.tags %}
 
-                    </figure>
+                                    {%- if item != "blog" -%}
+
+                                        <li class="mr-2">
+
+                                            <span class="inline-block bg-pink-500 px-4 py-2 text-white text-xs font-bold rounded">{{ item | capitalize }}</span>
+
+                                        </li>
+
+                                    {%- endif -%}
+
+                                {% endfor %}
+
+                            </ul>
+
+                            <figure>
+
+                                <img class="featured-image" src="{{ post.data.featured_image }}" alt="{{ post.data.image_caption }}" class="block rounded-t-lg">
+
+                            </figure>
+
+                        </a>
 
                     {% endif %}
 

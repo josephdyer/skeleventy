@@ -12,7 +12,7 @@ A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skelevent
 - Purgecss for removing unused CSS
 - ES6 support with Babel
 - SEO friendly pages (including open graph and twitter meta)
-- A simple, elegant blog
+- A simple blog, with categories and featured images
 
 ## Requirements
 

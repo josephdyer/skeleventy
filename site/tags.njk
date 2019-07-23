@@ -1,0 +1,39 @@
+---
+layout: default
+meta_title: Categories
+meta_description: Categories page description
+body_class: categories
+title: Categories
+pagination:
+  data: collections
+  size: 1
+  alias: category
+permalink: /category/{{ category }}/
+---
+
+<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
+
+    <section id="container-centre" class="flex-1 container ml-auto mr-auto">
+
+        <h1 class="page-title text-purple-900 text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">Category — {{ category | capitalize }}</h1>
+
+        <div class="posts">
+
+            {% for post in collections[category] %}
+
+                <article class="text-gray-500 mb-8 pb-8 border-b border-gray-200">
+
+                    <h2 class="text-4xl mb-3"><a class="block text-pink-500 hover:text-purple-900" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+
+                    <time datetime="{{ post.date }}">
+                        {{ post.date | dateDisplay }}
+                    </time>
+
+                </article>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+</main>

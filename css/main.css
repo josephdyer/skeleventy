@@ -488,6 +488,18 @@ a:hover {
   color: #21183c;
 }
 
+.visually-hidden {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  border: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+}
+
 h1, h2, h3 {
   font-weight: 700;
   line-height: 1.25;
@@ -543,6 +555,14 @@ h1, h2, h3 {
   }
 }
 
+.article-card .featured-image-link:hover .featured-image {
+  transform: scale(1.1);
+}
+
+.article-card .featured-image {
+  transition: transform 1.5s ease;
+}
+
 .appearance-none {
   appearance: none;
 }
@@ -567,8 +587,28 @@ h1, h2, h3 {
   background-color: #fff;
 }
 
+.hover\:bg-pink-500:hover {
+  background-color: #eb5286;
+}
+
 .hover\:bg-pink-600:hover {
   background-color: #d53f8c;
+}
+
+.border-gray-100 {
+  border-color: #f7fafc;
+}
+
+.border-gray-200 {
+  border-color: #edf2f7;
+}
+
+.border-pink-300 {
+  border-color: #fbb6ce;
+}
+
+.hover\:border-pink-500:hover {
+  border-color: #eb5286;
 }
 
 .rounded {
@@ -590,6 +630,14 @@ h1, h2, h3 {
 
 .border {
   border-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .block {
@@ -632,6 +680,10 @@ h1, h2, h3 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -652,10 +704,6 @@ h1, h2, h3 {
   list-style-type: disc;
 }
 
-.m-6 {
-  margin: 1.5rem;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -670,8 +718,16 @@ h1, h2, h3 {
   margin-right: auto;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mt-4 {
@@ -787,6 +843,10 @@ h1, h2, h3 {
   padding-left: 1rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -843,6 +903,14 @@ h1, h2, h3 {
   color: #eb5286;
 }
 
+.hover\:text-white:hover {
+  color: #fff;
+}
+
+.hover\:text-purple-900:hover {
+  color: #21183c;
+}
+
 .hover\:text-pink-500:hover {
   color: #eb5286;
 }
@@ -865,6 +933,10 @@ h1, h2, h3 {
 
 .text-3xl {
   font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
 }
 
 .text-5xl {
@@ -894,6 +966,10 @@ h1, h2, h3 {
 
 .w-full {
   width: 100%;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 @media (min-width: 768px) {

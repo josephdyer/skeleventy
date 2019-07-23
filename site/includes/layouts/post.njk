@@ -20,26 +20,45 @@ layout: default
                     {{ date | dateDisplay }}
                 </time>
 
-                <p class="px-2">—</p>
+                {% if tags %}
 
-                <p class="category">Posted in <a href="/">{{ category }}</a></p>
+                    {# this will create a comma for multiple category links #}
+                    {% set comma = joiner() %}
+
+                    <p class="px-2">—</p>
+
+                    <p class="category">Posted in
+
+                        {% for item in tags %}
+
+                            {%- if item != "blog" -%}
+
+                                <a href="/category/{{ item }}">{{ comma() }} {{ item | capitalize }}</a>
+
+                            {%- endif -%}
+
+                        {% endfor %}
+
+                    </p>
+
+                {% endif %}
 
             </div>
 
             {# featured post image #}
             {% if featured_image %}
 
-            <figure class="mt-10 md:mt-20">
+                <figure class="mt-10 md:mt-20">
 
-                <img src="{{ featured_image }}" alt="{{ image_caption }}">
+                    <img src="{{ featured_image }}" alt="{{ image_caption }}">
 
-                {% if image_caption %}
+                    {% if image_caption %}
 
-                <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
+                        <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
 
-                {% endif %}
+                    {% endif %}
 
-            </figure>
+                </figure>
 
             {% endif %}
 
@@ -48,6 +67,27 @@ layout: default
         <div class="content post md:px-16">
 
             {{ content | safe }}
+
+            {# category links list #}
+            {% if tags %}
+
+                <ul class="flex pt-8 border-t border-gray-100">
+
+                    {% for item in tags %}
+
+                        {%- if item != "blog" -%}
+
+                            <li class="mr-2">
+                                <a class="inline-block border border-pink-300 px-4 py-2 text-pink-500 text-xs font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500" href="/category/{{ item }}">{{ item | capitalize }}</a>
+                            </li>
+
+                        {%- endif -%}
+
+                    {% endfor %}
+
+                </ul>
+
+            {% endif %}
 
         </div>
 

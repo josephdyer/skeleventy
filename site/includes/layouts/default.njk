@@ -7,14 +7,18 @@
     <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-    {# include main.css in development mode #}
+    {% if page.fileSlug === "blog" %}
+        <meta name="robots" content="noindex,follow" />
+    {% endif %}
+
+    {# for performance gains over the network, if your site's entire CSS comes in under 16kb, you may want to consider just having it inlined in the head #}
+    {# include main.css if in development mode #}
     {% if helpers.environment == "development" %}
     <link rel="stylesheet" href="/css/main.css">
     {% else %}
-    {# otherwise, use main.min.css #}
+    {# else, use the minified css file for production #}
     <link rel="stylesheet" href="/css/main.min.css">
     {% endif %}
-    {# for performance gains over the network, if your site's entire CSS comes in under 16kb, you may want to consider just having it inlined in the head #}
 
     {# social meta tags and assets like fonts, favicons etc, should be last #}
     {% include "components/social-meta.njk" %}
@@ -22,6 +26,8 @@
 </head>
 
 <body {% if body_class %} id="{{ body_class }}"{% endif %} class="min-h-full font-sans text-lg text-purple-darkest leading-normal">
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
 
     <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
 
