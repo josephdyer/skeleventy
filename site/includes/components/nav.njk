@@ -1,22 +1,23 @@
-<nav id="nav" class="nav flex">
 
-    <ul class="menu flex flex-col md:flex-row items-center list-reset text-base">
 
-        {% for item in navigation.main %}
+    <nav id="nav" class="nav hidden sm:flex sm:items-center sm:w-auto w-full mt-2 sm:mt-0">
 
-        <li class="level-1 mb-4 md:mr-4 md:mb-0">
+        <ul class="menu sm:flex items-center justify-between list-reset text-base">
 
-            <a href="{{ item.url | safe }}" class="link font-bold text-white hover:text-pink-500 {% if page.url == item.url %}active text-pink-500{% endif %}
-            "{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+            {% for item in navigation.main %}
 
-        </li>
+            <li class="level-1 mb-4 sm:mr-4 sm:mb-0">
 
-        {% endfor %}
+                <a href="{{ item.url | safe }}" class="link font-bold text-white hover:text-pink-500 {% if page.url == item.url %}active text-pink-500{% endif %}
+                "{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
 
-        <li>
-            <a class="inline-block rounded md:ml-2 py-3 px-6 text-white font-bold bg-pink-500 hover:bg-white hover:text-pink-500" href="https://github.com/josephdyer/skeleventy" target="_blank" rel="noopener">Download</a>
-        </li>
+            </li>
 
-    </ul>
+            {% endfor %}
 
-</nav>
+            <li>
+                <a class="inline-block rounded sm:ml-2 py-3 px-6 text-white font-bold bg-pink-500 hover:bg-white hover:text-pink-500" href="https://github.com/josephdyer/skeleventy" target="_blank" rel="noopener">Download</a>
+            </li>
+
+        </ul>
+    </nav>

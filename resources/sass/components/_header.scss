@@ -1,3 +1,5 @@
-
 //==========  Header ==========//
 
+#menu-toggle:checked + #nav {
+  display: block;
+}
