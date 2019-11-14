@@ -1,7 +1,7 @@
 backend:
   name: skeleventy
   branch: master # Branch to update (optional; defaults to master)
-  media_folder: "images/uploads"
+media_folder: "images/uploads"
 collections:
   - name: "blog de bob" # Used in routes, e.g., /admin/collections/blog
     label: "Blog de bob" # Used in the UI
