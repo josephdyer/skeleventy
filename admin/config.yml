@@ -1,5 +1,6 @@
 backend:
-  name: skeleventy
+  name: github
+  repo: Nico-L/skelenventy # Path to your GitHub repository
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "images/uploads"
 locale: 'fr'
