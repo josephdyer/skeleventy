@@ -4,6 +4,21 @@ backend:
 media_folder: "images/uploads"
 locale: 'fr'
 collections:
+  - name: "galeries"
+    label: "Les galeries"
+    create: true
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+  - name: "contenuGaleries"
+    label: "Les photos des galeries"
+    folder: "site/imgGalerie"
+    create: true
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Légende", name: "legende", widget: "string"}
+      - {label: "Galerie", name: "galerie", widget: "relation", collection: "galeries", searchFields: ["title"], displayFields: ["title"], valueFields: "title"}
   - name: "blog de bob" # Used in routes, e.g., /admin/collections/blog
     label: "Blog de bob" # Used in the UI
     folder: "site/blog" # The path to the folder where the documents are stored
