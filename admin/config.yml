@@ -19,7 +19,13 @@ collections:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Légende", name: "legende", widget: "string"}
-      - {label: "Galerie", name: "galerie", widget: "relation", collection: "galeries", searchFields: ["title"], displayFields: ["title"], valueFields: "title"}
+      - label: "Galerie"
+        name: "galerie"
+        widget: "relation"
+        collection: "galeries"
+        searchFields: "title"
+        displayFields: "title"
+        valueFields: "title"
   - name: "blog de bob" # Used in routes, e.g., /admin/collections/blog
     label: "Blog de bob" # Used in the UI
     folder: "site/blog" # The path to the folder where the documents are stored
