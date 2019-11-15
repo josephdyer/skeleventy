@@ -6,13 +6,14 @@ locale: 'fr'
 collections:
   - name: "galeries"
     label: "Les galeries"
+    folder: "site/galeries"
     create: true
     fields:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Description", name: "body", widget: "markdown"}
   - name: "contenuGaleries"
     label: "Les photos des galeries"
-    folder: "site/imgGalerie"
+    folder: "site/imgGaleries"
     create: true
     fields:
       - {label: "Titre", name: "title", widget: "string"}
