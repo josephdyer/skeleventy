@@ -7,12 +7,13 @@ A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skelevent
 ## Features
 
 - Build sites faster, with the power of Eleventy, TailwindCSS and SCSS
-- Gulp build pipeline to watch, concatenate and compile styles and scripts
+- Laravel Mix (Webpack) to watch, concatenate and compile styles and scripts
 - HTML minifier
 - Purgecss for removing unused CSS
 - ES6 support with Babel
 - SEO friendly pages (including open graph and twitter meta)
-- A simple blog, with categories and featured images
+- Image lazyloading
+- A simple blog with categories and featured images
 
 ## Requirements
 
@@ -24,7 +25,7 @@ Node `>=` v8.9.0
 npm install
 ```
 
-`cd` into your project folder and type the `npm run dev` command into terminal, to start the development server and Gulp. Eleventy has baked in hot reloading and will files for changes.
+`cd` into your project folder and type the `npm run dev` command into terminal, to start the development server and Mix. Eleventy has hot reloading baked in and will automatically watch files for changes.
 
 _For those of you on Windows, [see Daniel Schildt's potential fix](https://github.com/josephdyer/skeleventy/issues/2#issuecomment-465754702) for the environment helper._
 
@@ -36,14 +37,12 @@ Within this, lives a `globals` folder, where you'll find a `site.json` file - fo
 
 A `navigation.json`, which we loop over in the template, to generate our nav and a `helpers.js` which just contains a simple environment helper.
 
-Uncompiled SCSS and JS reside in the `resources` folder - Gulp will be watching these folders for any changes (you should restart the server when creating new partials).
+Uncompiled SCSS and JS reside in the `resources` folder - Mix will be watching these folders for any changes (you should restart the server when creating new partials).
 
-When in development mode, Skeleventy will use `main.css` as the stylesheet. This will be pretty chunky in filesize, due to it containing all of Tailwind's utility classes. Once you run the build command ready for deployment, Skeleventy will then reference the minified version of the stylesheet `main.min.css`.
-
-Purge will also run via the build command and will cross reference all of Tailwind's utility classes with your templates/HTML and will remove all the unused ones - pretty cool right?
+When in development mode, Skeleventy will use `main.css` as the stylesheet. This will be pretty chunky in filesize, due to it containing all of Tailwind's utility classes.
 
 ## Ready to deploy?
 
-Type the `npm run build` command to minify scripts, styles and run Purgecss.
+Type the `npm run production` command to minify scripts, styles and run Purgecss.
 
-Feel free to adapt this as you wish! Go build some cool stuff and put it on Netlify - seriously it's the future!
+Purge will cross reference your templates with Tailwind and will remove all the classes you haven't used. Skeleventy will also reference `main.min.css` as the new stylesheet.

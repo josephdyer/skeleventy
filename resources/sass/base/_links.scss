@@ -1,10 +1,6 @@
 
 //==========  Links ==========//
 
-.transition {
-    transition: 0.25s color ease-out;
-}
-
 a {
     @apply no-underline text-pink-500 transition;
 

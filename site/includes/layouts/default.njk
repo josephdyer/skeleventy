@@ -5,31 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}</title>
     <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
     {% if page.fileSlug === "blog" %}
         <meta name="robots" content="noindex,follow" />
     {% endif %}
 
-    {# for performance gains over the network, if your site's entire CSS comes in under 16kb, you may want to consider just having it inlined in the head #}
+    {# if your site's entire CSS comes in under 14kb, you may want to inline in the head #}
     {# include main.css if in development mode #}
     {% if helpers.environment == "development" %}
-    <link rel="stylesheet" href="/css/main.css">
+        <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="/css/main.css" /></noscript>
     {% else %}
-    {# else, use the minified css file for production #}
-    <link rel="stylesheet" href="/css/main.min.css">
+        {# else, use the minified css file for production #}
+        <link rel="preload" href="/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="/css/main.min.css" /></noscript>
     {% endif %}
 
-    {# social meta tags and assets like fonts, favicons etc, should be last #}
+    {# include scripts #}
+    {% if helpers.environment == "development" %}
+        <script src="/js/main.js" defer></script>
+    {% else %}
+        <script src="/js/main.min.js" defer></script>
+    {% endif %}
+
+    {# include social meta tags #}
     {% include "components/social-meta.njk" %}
+
+    {# lastly include favicon, fonts, etc #}
     <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
+
+    {# canonical #}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 </head>
 
-<body {% if body_class %} id="{{ body_class }}"{% endif %} class="min-h-full font-sans text-lg text-purple-darkest leading-normal">
+<body {% if body_class %} id="{{ body_class }}"{% endif %} class="text-purple-900 leading-normal">
 
     <a class="visually-hidden" href="#main">Skip to content</a>
 
-    <div id="wrapper" class="wrapper flex flex-col relative min-h-screen">
+    <div id="wrapper" class="wrapper pb-12 md:pb-0 flex flex-col relative min-h-screen">
 
         {# include header #}
         {% include "components/header.njk" %}
@@ -42,12 +54,8 @@
 
     </div>
 
-    {# include scripts #}
-    {% if helpers.environment == "development" %}
-    <script src="/javascript/main.js"></script>
-    {% else %}
-    <script src="/javascript/main.min.js"></script>
-    {% endif %}
+    {# include mobile nav #}
+    {% include "components/mobile-nav.njk" %}
 
 </body>
 </html>

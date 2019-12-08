@@ -2,9 +2,10 @@
 layout: default
 ---
 
-<main id="main" class="main flex flex-1 flex-col md:flex-row py-10 px-6 lg:px-0 lg:py-20">
+{# a post layout #}
+<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20">
 
-    <section id="container-centre" class="flex-1 container ml-auto mr-auto lg:px-32">
+    <section id="container-centre" class="column centre flex-1">
 
         <div class="post-header mb-12 md:mb-20">
 
@@ -50,7 +51,7 @@ layout: default
 
                 <figure class="mt-10 md:mt-20">
 
-                    <img src="{{ featured_image }}" alt="{{ image_caption }}">
+                    <img data-lazy="{{ featured_image }}" alt="{{ image_caption }}">
 
                     {% if image_caption %}
 
@@ -96,7 +97,7 @@ layout: default
 
             <figure class="mb-4">
 
-                <img class="block rounded-full m-auto w-64 p-8 md:p-12" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+                <img data-lazy="{{ site.author.avatar }}" class="block rounded-full m-auto w-64 p-8 md:p-12" alt="{{ site.author.name }}">
 
                 <figcaption class="font-bold text-pink-500">{{ site.author.name }}</figcaption>
 
