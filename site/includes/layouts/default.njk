@@ -12,12 +12,10 @@
     {# if your site's entire CSS comes in under 14kb, you may want to inline in the head #}
     {# include main.css if in development mode #}
     {% if helpers.environment == "development" %}
-        <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="/css/main.css" /></noscript>
+        <link rel="stylesheet" href="/css/main.css">
     {% else %}
         {# else, use the minified css file for production #}
-        <link rel="preload" href="/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="/css/main.min.css" /></noscript>
+        <link rel="stylesheet" href="/css/main.min.css">
     {% endif %}
 
     {# include scripts #}
