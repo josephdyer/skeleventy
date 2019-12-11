@@ -44,3 +44,7 @@ When in development mode, Skeleventy will use `main.css` as the stylesheet. This
 Type the `npm run production` command to minify scripts, styles and run Purgecss.
 
 Purge will cross reference your templates with Tailwind and will remove all the classes you haven't used. Skeleventy will also reference `main.min.css` as the new stylesheet.
+
+## Recommendations
+
+Once you've had a tinker with Skeleventy, hop over to [Netlify](https://www.netlify.com) to host it for free. You can set up continuous deployment, which will watch your repo and deploy when you've pushed new changes - you'll see the true magic of a modern JAMstack site and it's workflow ;)
