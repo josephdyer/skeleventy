@@ -25,11 +25,7 @@ Node `>=` v8.9.0
 npm install
 ```
 
-To start the development server (and Mix), run the command `npm run dev` into terminal.
-
-Eleventy has hot reloading baked in and will automatically watch your template files for changes.
-
-Mix will watch any changes to the JS and SCSS files.
+To start the development server (and Mix), run the `npm run dev` command in terminal. Eleventy has hot reloading baked in and will automatically watch your template files for changes. Mix will watch any changes to the JS and SCSS files.
 
 ## Folder Structure
 
