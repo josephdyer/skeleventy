@@ -47,4 +47,4 @@ Purge will cross reference your templates with Tailwind and will remove all the 
 
 ## Recommendations
 
-Once you've had a tinker with Skeleventy, hop over to [Netlify](https://www.netlify.com) to host it for free. You can set up continuous deployment, which will watch your repo and deploy when you've pushed new changes - you'll see the true magic of a modern JAMstack site and it's workflow ;)
+Once you've had a tinker with Skeleventy, hop over to [Netlify](https://www.netlify.com) and host your beautiful creation for free. You can set up continuous deployment, which will watch your repo and deploy when you've pushed new changes - you'll see the true magic of a modern JAMstack site and it's workflow ;)
