@@ -7,7 +7,7 @@ A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skelevent
 ## Features
 
 - Build sites faster, with the power of Eleventy, TailwindCSS and SCSS
-- Laravel Mix (Webpack) to watch, concatenate and compile styles and scripts
+- [Laravel Mix](https://laravel-mix.com/docs/5.0/basic-example) (Webpack) to watch, concatenate and compile styles and scripts
 - HTML minifier
 - Purgecss for removing unused CSS
 - ES6 support with Babel
@@ -37,7 +37,7 @@ Within this, lives a `globals` folder, where you'll find a `site.json` file - fo
 
 A `navigation.json`, which we loop over in the template, to generate our nav and a `helpers.js` which just contains a simple environment helper.
 
-Uncompiled SCSS and JS reside in the `resources` folder - Mix will be watching these folders for any changes (you should restart the server when creating new partials).
+Uncompiled SCSS and JS reside in the `resources` folder - Mix will be watching these folders for any changes (you should probably restart the server when creating new partials).
 
 When in development mode, Skeleventy will use `main.css` as the stylesheet. This will be pretty chunky in filesize, due to it containing all of Tailwind's utility classes.
 

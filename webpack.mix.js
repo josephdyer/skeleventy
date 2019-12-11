@@ -78,10 +78,7 @@ mix
                     'required',
                     'row',
                     'visually-hidden',
-                    'mobile-nav-toggle',
-                    'mobile-nav-line',
-                    'menu-visible',
-                    'mobile-nav'
+                    'menu-visible'
                 ]
             })
 
