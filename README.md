@@ -45,7 +45,7 @@ Type the `npm run production` command to minify scripts, styles and run Purgecss
 
 Purge will cross reference your templates/HTML with all those Tailwind classes and will remove any classes you haven't used - pretty cool huh?
 
-Skeleventy will now reference `main.min.css` as the new stylesheet (annoyingly, Mix also minifies `main.css` and creates the `.min` version as well - this bugs the hell out of me!).
+Skeleventy will now reference `main.min.css` as the new stylesheet (annoyingly, Mix also minifies `main.css` as well - this bugs the hell out of me!).
 
 ## Recommendations
 
