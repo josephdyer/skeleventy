@@ -11,7 +11,7 @@ A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skelevent
 - HTML minifier
 - Purgecss for removing unused CSS
 - ES6 support with Babel
-- SEO friendly pages (including open graph and twitter meta)
+- SEO friendly pages (including Open Graph and Twitter meta)
 - Image lazyloading
 - A simple blog with categories and featured images
 
