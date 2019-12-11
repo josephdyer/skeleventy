@@ -6,7 +6,7 @@ A skeleton boilerplate built with Eleventy and TailwindCSS. Check out [Skelevent
 
 ## Features
 
-- Build sites faster, with the power of Eleventy, TailwindCSS and SCSS
+- Build sites faster with the power of [Eleventy](https://www.11ty.dev/docs/), [TailwindCSS](https://tailwindcss.com) and SCSS
 - [Laravel Mix](https://laravel-mix.com/docs/5.0/basic-example) (Webpack) to watch, concatenate and compile styles and scripts
 - HTML minifier
 - Purgecss for removing unused CSS
@@ -26,8 +26,6 @@ npm install
 ```
 
 `cd` into your project folder and type the `npm run dev` command into terminal, to start the development server and Mix. Eleventy has hot reloading baked in and will automatically watch files for changes.
-
-_For those of you on Windows, [see Daniel Schildt's potential fix](https://github.com/josephdyer/skeleventy/issues/2#issuecomment-465754702) for the environment helper._
 
 ## Folder Structure
 
