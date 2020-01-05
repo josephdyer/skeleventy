@@ -2,17 +2,16 @@
 //==========  Links ==========//
 
 a {
-    @apply no-underline text-pink-500 transition;
+    @apply text-purple-900 no-underline transition;
 
-    &:hover {
-        @apply text-purple-900;
+    &:not([class]) {
+        border-bottom-width: 2px;
+        border-color: #eb5286;
+
+        &:hover {
+            @apply text-pink-500;
+        }
     }
 }
 
-// don't hide from screen readers
-.visually-hidden {
-    @apply m-0 p-0 absolute whitespace-no-wrap overflow-hidden h-auto;
-    border: 0;
-    clip: rect(0 0 0 0);
-    width: 1px;
-}
+

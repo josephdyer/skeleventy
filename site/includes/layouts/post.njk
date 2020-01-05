@@ -3,7 +3,7 @@ layout: default
 ---
 
 {# a post layout #}
-<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20">
+<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
 
     <section id="container-centre" class="column centre flex-1">
 
@@ -72,7 +72,7 @@ layout: default
             {# category links list #}
             {% if tags %}
 
-                <ul class="flex pt-8 border-t border-gray-100">
+                <ul class="flex pt-4">
 
                     {% for item in tags %}
 
@@ -92,21 +92,12 @@ layout: default
 
         </div>
 
-        {# author card #}
-        <div class="author-card flex flex-col justify-center w-3/4 md:w-2/5 m-auto mt-16 px-12 pb-12 shadow-md rounded-lg text-center">
+        <div class="mt-16 md:px-16">
 
-            <figure class="mb-4">
-
-                <img data-lazy="{{ site.author.avatar }}" class="block rounded-full m-auto w-64 p-8 md:p-12" alt="{{ site.author.name }}">
-
-                <figcaption class="font-bold text-pink-500">{{ site.author.name }}</figcaption>
-
-            </figure>
-
-            <p class="text-sm mb-8">I've spent all my life on top of a mountain, learning the way of the Ninja Dev.</p>
-
-            {% include 'components/social-icons.njk' %}
-
+            <div class="flex justify-between mt-16 border-t border-gray-200 pt-12">
+                {% if prevPost %}<p class="text-gray-700 text-sm"><span>Previous:</span> <a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a></p>{% endif %}
+                {% if nextPost %}<p class="text-gray-700 text-sm"><span>Next:</span> <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
+            </div>
         </div>
 
     </section>

@@ -10,20 +10,35 @@ module.exports = eleventyConfig => {
 
     // Minify our HTML
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
-        if( outputPath.endsWith(".html") ) {
+        if ( outputPath.endsWith(".html") )
+        {
             let minified = htmlmin.minify(content, {
                 useShortDoctype: true,
                 removeComments: true,
                 collapseWhitespace: true
-            });
-            return minified;
+            })
+            return minified
         }
-        return content;
+        return content
     })
 
     // Collections
     eleventyConfig.addCollection('blog', collection => {
-        return collection.getFilteredByTag('blog').reverse()
+
+        const blogs = collection.getFilteredByTag('blog')
+
+        for( let i = 0; i < blogs.length; i++ ) {
+
+            const prevPost = blogs[i - 1]
+            const nextPost = blogs[i + 1]
+
+            blogs[i].data["prevPost"] = prevPost
+            blogs[i].data["nextPost"] = nextPost
+
+        }
+
+        return blogs.reverse()
+
     })
 
     // Layout aliases
