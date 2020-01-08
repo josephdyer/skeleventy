@@ -18,7 +18,7 @@ title: Contact Us
 
             <form class="form">
 
-                {# this form doesn't work - it's just a nice boilerplate one to get you up and running #}
+                {# this form doesn't work - it's just a nice boilerplate to get you up and running #}
                 {# uses HTML5 validation #}
 
                 {# if you add a class of 'required' to the row, you'll see the label will change to (required) #}
@@ -38,7 +38,7 @@ title: Contact Us
                     <input class="input" id="phone" type="text" name="phone" autocomplete="tel" required aria-required="true">
                 </div>
 
-                {# you'll see the label will change to (optional) if you leave the row as default #}
+                {# you'll see the label change to (optional) if you leave the required class off the row #}
                 <div class="row">
                     <label for="message">Message</label>
                     <textarea class="textarea" id="message" name="message"></textarea>
@@ -52,4 +52,31 @@ title: Contact Us
 
     </section>
 
+    {# an optional and basic local business schema example #}
+    {# <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ site.name }}",
+        "image": "{{ site.url }}{{ site.images.logo }}",
+        "url": "{{ site.url }}{{ page.url }}",
+        "email": "{{ site.contact.email }}",
+        "telephone": "{{ site.contact.phone }}",
+        "priceRange": "£",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.address.street }}",
+            "addressLocality": "{{ site.address.city }}",
+            "postalCode": "{{ site.address.postcode }}",
+            "addressCountry": "{{ site.address.country }}"
+        },
+        "sameAs": [
+            "{{ site.social_links.twitter }}",
+            "{{ site.social_links.facebook }}",
+            "{{ site.social_links.instagram }}"
+        ]
+    }
+    </script> #}
+
 </main>
+

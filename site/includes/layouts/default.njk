@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}</title>
     <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
-    {% if page.fileSlug === "blog" %}
+    {% if page.fileSlug === 'blog' %}
         <meta name="robots" content="noindex,follow" />
+    {% else %}
+        <meta name="robots" content="index,follow" />
     {% endif %}
 
     {# if your site's entire CSS comes in under 14kb, you may want to inline in the head #}
     {# include main.css if in development mode #}
-    {% if helpers.environment == "development" %}
+    {% if helpers.environment === "development" %}
         <link rel="stylesheet" href="/css/main.css">
     {% else %}
         {# else, use the minified css file for production #}
@@ -19,7 +21,7 @@
     {% endif %}
 
     {# include scripts #}
-    {% if helpers.environment == "development" %}
+    {% if helpers.environment === "development" %}
         <script src="/js/main.js" defer></script>
     {% else %}
         <script src="/js/main.min.js" defer></script>
