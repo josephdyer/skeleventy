@@ -9,12 +9,8 @@
             "url": "/about/"
         },
         {
-            "label": "Price List",
-            "url": "/price-list/"
-        },
-        {
-            "label": "Kid's Parties",
-            "url": "/kids-parties/"
+            "label": "Blog",
+            "url": "/blog/"
         },
         {
             "label": "Contact",

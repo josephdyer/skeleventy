@@ -1,10 +1,10 @@
 {
-    "name": "Rebecca's Gel Nails",
-    "url": "https://rebeccasgelnails.co.uk",
+    "name": "Skeleventy",
+    "url": "https://skeleventy.netlify.com",
     "author": {
-        "name": "Rebecca Dyer",
-        "email": "rebeccasgelnails@gmail.com",
-        "handle": "@rebeccas_gelnailsbristol",
+        "name": "Max Power",
+        "email": "hello@maxpower.com",
+        "handle": "@maxpower",
         "avatar": "/images/blog/author.jpg"
     },
     "images": {
@@ -14,18 +14,21 @@
         "og": "/images/meta/og.jpg"
     },
     "social_links": {
-        "instagram": "https://www.instagram.com/rebeccas_gelnailsbristol",
-        "facebook": "https://www.facebook.com/rebeccasgelnailsbristol"
+        "facebook": "https://www.facebook.com",
+        "twitter": "https://twitter.com/joe_dyer1",
+        "linkedin": "https://www.linkedin.com",
+        "instagram": "https://www.instagram.com"
     },
     "address": {
-        "street": "Holbrook Crescent",
-        "street_2": "Hartcliffe",
-        "city": "Bristol",
-        "postcode": "BS13 0EU",
+        "street": "123 Fake Street",
+        "street_2": "Fake Road",
+        "city": "London",
+        "postcode": "LN1 234",
         "country": "GB"
     },
     "contact": {
-        "mobile": "07815 194269",
-        "email": "rebeccasgelnails@gmail.com"
+        "phone": "123 456 789",
+        "mobile": "(+44) 1234 5678",
+        "email": "hello@maxpower.com"
     }
 }
