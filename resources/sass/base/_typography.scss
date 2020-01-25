@@ -1,13 +1,51 @@
 
 //==========  Typography ==========//
 
+// Poppins Light
+@font-face {
+	font-display: swap;
+	font-family: 'Poppins Light';
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/poppins-light.woff2') format('woff2'),
+		 url('/fonts/poppins-light.woff') format('woff');
+}
+
+// Poppins Regular
+// @font-face {
+// 	font-display: swap;
+// 	font-family: 'Poppins Regular';
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	src: url('/fonts/poppins-regular.woff2') format('woff2'),
+// 		 url('/fonts/poppins-regular.woff') format('woff');
+// }
+
+// Poppins Medium
+@font-face {
+	font-display: swap;
+	font-family: 'Poppins Medium';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/poppins-medium.woff2') format('woff2'),
+		 url('/fonts/poppins-medium.woff') format('woff');
+}
+
 // headings
 h1, h2, h3 {
-    @apply font-bold leading-tight mt-0 mb-6 text-purple-900;
+    @apply font-title leading-tight mt-0 mb-6 text-purple-900;
 }
 
 .page-title {
-	@apply text-5xl;
+	@apply text-2xl;
+
+	@screen md {
+		@apply text-4xl;
+	}
+
+	@screen lg {
+		@apply text-5xl;
+	}
 }
 
 // content
@@ -18,12 +56,12 @@ h1, h2, h3 {
 		@apply mb-8;
 
         // intro paragraph
-		&:first-child {
-			@apply border-b border-gray-200 text-2xl pb-10 mb-10 font-light leading-snug text-gray-600;
+		// &:first-child {
+		// 	@apply border-b border-gray-200 text-2xl pb-10 mb-10 font-light leading-snug text-gray-600;
 
-			@screen md {
-                @apply text-3xl;
-            }
-		}
+		// 	@screen md {
+        //         @apply text-3xl;
+        //     }
+		// }
     }
 }

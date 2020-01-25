@@ -52,16 +52,15 @@ title: Contact Us
 
     </section>
 
-    {# an optional and basic local business schema example #}
-    {# <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "{{ site.name }}",
+        "name": "Rebecca's Gel Nails",
         "image": "{{ site.url }}{{ site.images.logo }}",
         "url": "{{ site.url }}{{ page.url }}",
         "email": "{{ site.contact.email }}",
-        "telephone": "{{ site.contact.phone }}",
+        "telephone": "{{ site.contact.mobile }}",
         "priceRange": "£",
         "address": {
             "@type": "PostalAddress",
@@ -71,12 +70,11 @@ title: Contact Us
             "addressCountry": "{{ site.address.country }}"
         },
         "sameAs": [
-            "{{ site.social_links.twitter }}",
             "{{ site.social_links.facebook }}",
             "{{ site.social_links.instagram }}"
         ]
     }
-    </script> #}
+    </script>
 
 </main>
 
