@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="min-h-full antialiased">
+<html lang="en" class="min-h-full antialiased font-sans">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,13 +31,16 @@
     {% include "components/social-meta.njk" %}
 
     {# lastly include favicon, fonts, etc #}
+    <link rel="preload" href="/fonts/poppins-light.woff2" as="font" type="font/woff2" crossorigin>
+    {# <link rel="preload" href="/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin> #}
+    <link rel="preload" href="/fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
 
     {# canonical #}
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 </head>
 
-<body {% if body_class %} id="{{ body_class }}"{% endif %} class="text-purple-900 leading-normal text-lg">
+<body {% if body_class %} id="{{ body_class }}"{% endif %} class="text-purple-900 leading-relaxed text-lg md:text-xl">
 
     <a class="visually-hidden" href="#main">Skip to content</a>
 
