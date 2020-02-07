@@ -5,11 +5,13 @@ layout: default
 {# a post layout #}
 <main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
 
-    <section id="container-centre" class="column centre flex-1">
+    <article id="container-centre" class="column centre flex-1">
 
-        <div class="post-header mb-12 md:mb-20">
+        <div class="mb-12 md:mb-20">
 
-            <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">{{ title }}</h1>
+            <header>
+                <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">{{ title }}</h1>
+            </header>
 
             <div class="text-sm md:text-base text-gray-600 flex justify-center">
 
@@ -79,7 +81,7 @@ layout: default
                         {%- if item != "blog" -%}
 
                             <li class="mr-2">
-                                <a class="inline-block border border-pink-300 px-4 py-2 text-pink-500 text-xs font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500" href="/category/{{ item }}">{{ item | capitalize }}</a>
+                                <a class="inline-block px-3 py-2 text-white bg-purple-900 text-xs font-semibold rounded hover:text-white hover:bg-pink-500" href="/category/{{ item }}">{{ item | capitalize }}</a>
                             </li>
 
                         {%- endif -%}
@@ -100,6 +102,6 @@ layout: default
             </div>
         </div>
 
-    </section>
+    </article>
 
 </main>
