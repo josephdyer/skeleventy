@@ -1,18 +1,6 @@
 
 //==========  Utility classes ==========//
 
-.transition {
-    transition: 0.25s all ease-out;
-}
-
-// don't hide from screen readers
-.visually-hidden {
-    @apply m-0 p-0 absolute whitespace-no-wrap overflow-hidden h-auto;
-    border: 0;
-    clip: rect(0 0 0 0);
-    width: 1px;
-}
-
 // subtle 'fade in' to the lazyloaded image
 [data-lazy] {
     @apply opacity-0 w-full;
