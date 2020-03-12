@@ -27,20 +27,20 @@ title: Contact Us
                 {# opinionated form UX - but it's nice and quick to see at glance what fields are required/optional #}
                 <div class="row required">
                     <label for="name">Name</label>
-                    <input class="input" id="name" type="text" name="name" autocomplete="name" required aria-required="true">
+                    <input class="input" id="name" type="text" name="name" autocomplete="name" required>
                 </div>
 
                 <div class="row required">
                     <label for="email">Email</label>
-                    <input class="input" id="email" type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="email" required aria-required="true">
+                    <input class="input" id="email" type="text" name="email" autocapitalize="off" autocomplete="email" required>
                 </div>
 
                 <div class="row required">
                     <label for="phone">Phone</label>
-                    <input class="input" id="phone" type="text" name="phone" autocomplete="tel" required aria-required="true">
+                    <input class="input" id="phone" type="text" name="phone" autocomplete="tel" required>
                 </div>
 
-                {# you'll see the label change to (optional) if you leave the required class off the row #}
+                {# this field label will show as (optional) as the required class has been left off #}
                 <div class="row">
                     <label for="message">Message</label>
                     <textarea class="textarea" id="message" name="message"></textarea>
