@@ -1,14 +1,15 @@
 ---
 layout: default
-meta_title: Categories
-meta_description: Categories page description
-body_class: categories
-title: Categories
+meta_description: Category page description
+meta_title: Category
+body_class: category
+title: Category
 pagination:
   data: collections
   size: 1
   alias: category
-permalink: /category/{{ category }}/
+permalink: "/category/{{ category }}/"
+hidden: true
 ---
 
 <main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
@@ -16,7 +17,7 @@ permalink: /category/{{ category }}/
     <article id="container-centre" class="column centre flex-1">
 
         <header>
-            <h1 class="page-title text-purple-900 text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">Category — {{ category | capitalize }}</h1>
+            <h1 class="page-title text-purple-900 text-3xl md:text-center md:text-5xl mb-16 lg:mb-24 lg:text-6xl">{{ title }} — {{ category | capitalize }}</h1>
         </header>
 
         <div class="posts">
