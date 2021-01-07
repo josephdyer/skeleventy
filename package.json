@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "Skeleventy - A skeleton boilerplate built with Eleventy",
   "scripts": {
-    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve & webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npx @11ty/eleventy --config=eleventy.config.js"
+    "dev": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve & webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npx @11ty/eleventy --config=eleventy.config.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "cross-env": "^7.0.2",    
     "html-minifier": "^4.0.0",
     "laravel-mix": "^5.0.1",
     "laravel-mix-purgecss": "^4.2.0",
