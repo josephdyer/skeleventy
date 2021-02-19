@@ -4,7 +4,7 @@
   "description": "Skeleventy gives you a rock solid foundation to build fast and accessible static websites",
   "scripts": {
     "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve --quiet & mix watch",
-    "production": "mix --production && npx @11ty/eleventy --config=eleventy.config.js"
+    "production": "mix --production & npx @11ty/eleventy --config=eleventy.config.js"
   },
   "repository": {
     "type": "git",
