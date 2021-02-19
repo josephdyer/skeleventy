@@ -1,0 +1,46 @@
+
+//========== Typography ==========//
+
+// set base font size
+body {
+    font-size: v(text-500);
+}
+
+// headings
+h1,
+h2,
+h3 {
+    @include apply-utility('leading', 'tight');
+    letter-spacing: -.01rem;
+}
+
+h1 {
+    --gap: #{get-size('700')};
+    font-size: v(text-900);
+    margin: 0 0 v(gap);
+}
+
+h2 {
+    font-size: v(text-800);
+}
+
+h3 {
+    font-size: v(text-700);
+}
+
+.content {
+    word-wrap: break-word;
+}
+
+// sub-heading
+.sub-heading {
+    font-size: v(text-700);
+    line-height: 1.5;
+}
+
+// lists
+ol,
+ul {
+    padding: 0 0 0 get-size('500');
+}
+

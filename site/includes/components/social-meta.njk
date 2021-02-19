@@ -1,18 +1,15 @@
-{# Google Schema #}
-<meta itemprop="name" content="{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}">
-<meta itemprop="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
 
 {# Twitter #}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}">
-<meta name="twitter:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
+<meta name="twitter:title" content="{{ meta_title if meta_title else title }} | {{ site.name }}">
+<meta name="twitter:description" content="{{ meta_description | truncate(140) if meta_description else content | striptags | truncate(140) }}">
 <meta name="twitter:site" content="{{ site.author.handle }}">
 <meta name="twitter:creator" content="{{ site.author.handle }}">
 <meta name="twitter:image:src" content="{{ site.url }}{{ site.images.twitter }}">
 
 {# Open Graph #}
-<meta name="og:title" content="{% if meta_title %}{{ meta_title }}{% else %}{{ title }}{% endif %} | {{ site.name }}">
-<meta name="og:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ excerpt }}{% endif %}">
+<meta name="og:title" content="{{ meta_title if meta_title else title }} | {{ site.name }}">
+<meta name="og:description" content="{{ meta_description | truncate(140) if meta_description else content | striptags | truncate(140) }}">
 <meta name="og:image" content="{{ site.url }}{{ site.images.og }}">
 <meta name="og:url" content="{{ site.url }}{{ page.url }}">
 <meta name="og:site_name" content="{{ site.name }}">

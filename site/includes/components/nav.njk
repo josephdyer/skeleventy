@@ -1,21 +1,21 @@
-<nav id="nav" class="nav hidden md:flex">
 
-    <ul class="menu flex flex-col md:flex-row items-center list-reset text-base">
+<nav id="nav" class="nav box-hidden mobileXL:box-block" aria-label="Primary">
 
-        {% for item in navigation.main %}
+    {% set navigation = collections.all | eleventyNavigation %}
 
-        <li class="level-1 mb-4 md:mr-4 md:mb-0">
+    <ul class="menu mobileXL:box-flex">
 
-            <a href="{{ item.url | safe }}" class="link font-bold text-white hover:text-pink-500 active:text-pink-500 {% if page.url == item.url %}active text-pink-500{% endif %}
-            "{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- for item in navigation %}
 
-        </li>
+            <li class="item">
 
-        {% endfor %}
+                <a href="{{ item.url | url }}" class="link box-block color-white text-400 weight-bold pl-300 pr-300 {{ 'active' if item.url === page.url }}" {{ 'aria-current=page' if item.url === page.url }}>{{ item.title }}</a>
 
-        <li>
-            <a class="inline-block rounded md:ml-2 py-3 px-6 text-white font-bold bg-pink-500 hover:bg-white hover:text-pink-500" href="https://github.com/josephdyer/skeleventy" target="_blank" rel="noopener">Download</a>
-        </li>
+            </li>
+
+        {%- endfor %}
+
+        <li class="item ml-400"><a href="https://github.com/josephdyer/skeleventy" class="link link-get-started bg-secondary box-block color-primary text-400 weight-bold pl-500 pr-500">Get started</a></li>
 
     </ul>
 

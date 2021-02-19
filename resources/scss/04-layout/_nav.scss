@@ -1,0 +1,25 @@
+
+//==========  Nav  ==========//
+
+.nav {
+
+    .link {
+        height: get-size('900');
+        line-height: get-size('900');
+
+        &.active,
+        &:hover {
+            @include apply-utility('color', 'secondary');
+        }
+
+        &-get-started {
+            border-radius: v(border-radius);
+            transition: background-color v(transition-duration) v(transition-timing);
+
+            &:hover {
+                @include apply-utility('bg', 'white');
+                @include apply-utility('color', 'primary');
+            }
+        }
+    }
+}

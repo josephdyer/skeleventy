@@ -1,0 +1,31 @@
+
+//==========  Header  ==========//
+
+// logo
+.logo {
+    --logo-size: #{get-size('500')};
+    font-size: v(logo-size);
+    margin: 0 auto;
+
+    &:hover {
+        @include apply-utility('color', 'secondary');
+    }
+}
+
+@include media-query('mobileXL') {
+
+    .logo {
+        --logo-size: #{get-size('600')};
+        margin: 0 auto 0 0;
+    }
+}
+
+@include media-query('mobileXL') {
+
+    .header-inner {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+

@@ -1,0 +1,44 @@
+
+//========== Utilities ==========//
+
+// container
+.inner {
+    @include apply-utility('width', 'full');
+    margin: 0 auto;
+    max-width: v(max-width);
+    @include apply-utility('pl', '600');
+    @include apply-utility('pr', '600');
+}
+
+// better vertical rhythm
+.flow > * + * {
+    margin-top: v(gap);
+
+    @include media-query('tablet') {
+        --gap: #{get-size('700')};
+    }
+}
+
+// subtle fade in to lazyloaded images
+[data-src] {
+    opacity: 0;
+}
+
+.loaded {
+    opacity: 1;
+    transition: opacity v(transition-duration) v(transition-timing);
+}
+
+// content only for screen readers
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+

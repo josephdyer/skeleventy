@@ -1,0 +1,36 @@
+
+//========== Post page ==========//
+
+.type-post {
+
+    .length-optimal {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .categories {
+
+        .category {
+
+            &:first-child {
+
+                &:before {
+                    content: '\00a0\00a0/\00a0\00a0';
+                }
+            }
+        }
+    }
+}
+
+.post-image {
+    border-radius: v(border-radius);
+}
+
+// blog post title
+.post-title {
+    font-size: v(text-1100);
+}
+
+.post-image-caption {
+    text-align: center;
+}

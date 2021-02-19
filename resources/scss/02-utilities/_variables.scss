@@ -1,0 +1,40 @@
+
+//==========  Variables  ==========//
+
+:root {
+
+    // site
+    --max-width: 80rem;
+
+    // spacing
+    --gap: #{get-size('600')};
+
+    // typography
+    --base-font-size: #{$gorko-base-size};
+    --ratio: 1.1;
+    --text-300: calc((var(--base-font-size) / var(--ratio)) / var(--ratio));
+    --text-400: calc(var(--text-300) * var(--ratio));
+    --text-500: calc(var(--text-400) * var(--ratio) * var(--ratio));
+    --text-600: calc(var(--text-500) * var(--ratio));
+    --text-700: calc(var(--text-600) * var(--ratio));
+    --text-800: calc(var(--text-700) * var(--ratio));
+    --text-900: calc(var(--text-800) * var(--ratio));
+    --text-1000: calc(var(--text-900) * var(--ratio));
+    --text-1100: calc(var(--text-1000) * var(--ratio));
+
+    // borders
+    --border-radius: .25rem;
+    --border-size: .15rem;
+
+    // transitions
+    --transition-duration: .25s;
+    --transition-timing: ease-out;
+
+    @include media-query('tablet') {
+        --ratio: 1.2;
+    }
+
+    @include media-query('laptop') {
+        --ratio: 1.25;
+    }
+}

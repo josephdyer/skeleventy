@@ -1,0 +1,20 @@
+---
+layout: page
+pagination:
+  data: collections
+  size: 1
+  alias: category
+  filter:
+    - all
+    - blog
+permalink: /categories/{{ category }}/
+hide_from_sitemap: true
+---
+
+<ul class="category-{{ category }} leading-loose">
+  {% for post in collections[category] %}
+     <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<p class="text-400">Back to <a href="/categories/">all categories</a></p>

@@ -1,0 +1,17 @@
+
+//========== Forms ==========//
+
+.textarea,
+.input {
+    border: 0;
+    border-radius: v(border-radius);
+    padding: 0 .5rem;
+}
+
+.input {
+    height: get-size('800');
+}
+
+.textarea {
+    height: get-size('1100');
+}

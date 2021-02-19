@@ -1,0 +1,11 @@
+
+//========== Pagination ==========//
+
+.pagination {
+    --gap: #{get-size('1000')};
+
+    .items {
+        justify-content: space-between;
+        padding: 0;
+    }
+}

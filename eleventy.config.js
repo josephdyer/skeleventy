@@ -1,39 +1,37 @@
-const htmlmin = require("html-minifier")
+const navigation = require('@11ty/eleventy-navigation')
+const dates = require('./utilities/filters/dates')
+const helpers = require('./utilities/filters/helpers')
+const path = require('path')
 
-module.exports = eleventyConfig => {
+module.exports = config => {
 
-    // Add a readable date formatter filter to Nunjucks
-    eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js"))
+    // navigation plugin
+    config.addPlugin(navigation)
 
-    // Add a HTML timestamp formatter filter to Nunjucks
-    eleventyConfig.addFilter("htmlDateDisplay", require("./filters/timestamp.js"))
+    // Human readable date for posts
+    config.addFilter('dateDisplay', dates.friendly)
+
+    // Timestamp for datetime element
+    config.addFilter('timestamp', dates.timestamp)
+
+    // Remove whitespace from a string
+    config.addNunjucksFilter('spaceless', helpers.spaceless)
 
     // Minify our HTML
-    eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
-        if ( outputPath.endsWith(".html") )
-        {
-            let minified = htmlmin.minify(content, {
-                useShortDoctype: true,
-                removeComments: true,
-                collapseWhitespace: true
-            })
-            return minified
-        }
-        return content
-    })
+    config.addTransform('htmlminify', require('./utilities/transforms/htmlminify'))
 
     // Collections
-    eleventyConfig.addCollection('blog', collection => {
+    config.addCollection('blog', collection => {
 
         const blogs = collection.getFilteredByTag('blog')
 
-        for( let i = 0; i < blogs.length; i++ ) {
+        for ( let i = 0; i < blogs.length; i++ ) {
 
-            const prevPost = blogs[i - 1]
-            const nextPost = blogs[i + 1]
+            const previous_post = blogs[i - 1]
+            const next_post = blogs[i + 1]
 
-            blogs[i].data["prevPost"] = prevPost
-            blogs[i].data["nextPost"] = nextPost
+            blogs[i].data['previous_post'] = previous_post
+            blogs[i].data['next_post'] = next_post
 
         }
 
@@ -41,25 +39,46 @@ module.exports = eleventyConfig => {
 
     })
 
+    // Categories collection
+    config.addCollection('categories', collection => {
+
+        const list = new Set()
+
+        collection.getAll().forEach(item => {
+
+            if (!item.data.tags) return
+
+            item.data.tags
+                .filter(category => !['blog', 'all'].includes(category))
+                .forEach(category => list.add(category))
+
+        })
+
+        return Array.from(list).sort()
+
+    })
+
     // Layout aliases
-    eleventyConfig.addLayoutAlias('default', 'layouts/default.njk')
-    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
+    config.addLayoutAlias('base', 'layouts/base.njk')
+    config.addLayoutAlias('home', 'layouts/home.njk')
+    config.addLayoutAlias('page', 'layouts/page.njk')
+    config.addLayoutAlias('blog', 'layouts/blog.njk')
+    config.addLayoutAlias('post', 'layouts/post.njk')
+    config.addLayoutAlias('contact', 'layouts/contact.njk')
+    config.addLayoutAlias('category', 'layouts/category.njk')
 
     // Include our static assets
-    eleventyConfig.addPassthroughCopy("css")
-    eleventyConfig.addPassthroughCopy("js")
-    eleventyConfig.addPassthroughCopy("images")
-    eleventyConfig.addPassthroughCopy("robots.txt")
+    config.addPassthroughCopy('css')
+    config.addPassthroughCopy('js')
+    config.addPassthroughCopy('images')
+    config.addPassthroughCopy('favicon.png')
+    config.addPassthroughCopy('favicon.svg')
 
     return {
-        templateFormats: ["md", "njk"],
         markdownTemplateEngine: 'njk',
-        htmlTemplateEngine: 'njk',
-        passthroughFileCopy: true,
-
         dir: {
             input: 'site',
-            output: 'dist',
+            output: 'public',
             includes: 'includes',
             data: 'globals'
         }

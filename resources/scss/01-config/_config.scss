@@ -1,0 +1,190 @@
+
+//==========  Gorko CSS Config  ==========//
+
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+$gorko-base-size: 1rem;
+
+/**
+ * SIZE SCALE
+ * This is a Major Third scale that powers all the utilities that
+ * it is relevant for (font-size, margin, padding). All items are
+ * calcuated off the base size, so change that and cascade across
+ * your whole project.
+ */
+$gorko-size-scale: (
+    '300': $gorko-base-size * 0.8,
+    '400': $gorko-base-size,
+    '500': $gorko-base-size * 1.25,
+    '600': $gorko-base-size * 1.56,
+    '700': $gorko-base-size * 1.95,
+    '800': $gorko-base-size * 2.44,
+    '900': $gorko-base-size * 3.05,
+    '1000': $gorko-base-size * 3.81,
+    '1100': $gorko-base-size * 4.76
+);
+
+/**
+ * COLORS
+ * Colors are shared between backgrounds and text by default.
+ * You can also use them to power borders, fills or shadows, for example.
+ */
+$gorko-colors: (
+    'primary': #01093c,
+    'secondary': #24e0d0,
+    'grey': #4e5b71,
+    'white': #fff
+);
+
+/**
+ * CORE CONFIG
+ * This powers everything from utility class generation to breakpoints
+ * to enabling/disabling pre-built components/utilities.
+ */
+$gorko-config: (
+    'bg': (
+        'items': $gorko-colors,
+        'output': 'standard',
+        'property': 'background'
+    ),
+    'color': (
+        'items': $gorko-colors,
+        'output': 'standard',
+        'property': 'color'
+    ),
+    'font': (
+        'items': (
+            'base': 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+            'heading': 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif'
+        ),
+        'output': 'standard',
+        'property': 'font-family'
+    ),
+    'box': (
+        'items': (
+            'block': 'block',
+            'inline-block': 'inline-block',
+            'flex': 'flex',
+            'grid': 'grid',
+            'hidden': 'none'
+        ),
+        'output': 'responsive',
+        'property': 'display'
+    ),
+    'mt': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'margin-top'
+    ),
+    'mb': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'margin-bottom'
+    ),
+    'ml': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'margin-left'
+    ),
+    'mr': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'margin-right'
+    ),
+    'pt': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'padding-top'
+    ),
+    'pb': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'padding-bottom'
+    ),
+    'pl': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'padding-left'
+    ),
+    'pr': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'padding-right'
+    ),
+    'text': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'font-size'
+    ),
+    'leading': (
+        'items': (
+            'tight': '1.1',
+            'normal': '1.6',
+            'loose': '2'
+        ),
+        'output': 'standard',
+        'property': 'line-height'
+    ),
+    'weight': (
+        'items': (
+            'thin': '300',
+            'regular': '400',
+            'bold': '700'
+        ),
+        'output': 'standard',
+        'property': 'font-weight'
+    ),
+    'width': (
+        'items': (
+            'full': '100%',
+            'screen': '100vw',
+            'half': percentage(1/2),
+            'quarter': percentage(1/4),
+            'third': percentage(1/3)
+        ),
+        'output': 'responsive',
+        'property': 'width'
+    ),
+    'height': (
+        'items': (
+            'full': '100%',
+            'screen': '100vh'
+        ),
+        'output': 'standard',
+        'property': 'height'
+    ),
+    'length': (
+        'items': (
+            'compact': 25ch,
+            'optimal': 75ch
+        ),
+        'output': 'standard',
+        'property': 'max-width'
+    ),
+    'z': (
+        'items': (
+            '-1': -1,
+            '1': 1,
+            '2': 2,
+            '10': 10,
+            '20': 20
+        ),
+        'output': 'standard',
+        'property': 'z-index'
+    ),
+    'breakpoints': (
+        'mobileL' : '(min-width : 22.5em)', // 360px
+        'mobileXL' : '(min-width : 40em)', // 640px
+        'tablet' : '(min-width : 48em)', // 768px
+        'laptop' : '(min-width : 64em)', // 1024px
+        'desktop' : '(min-width : 80em)', // 1280px
+        'desktopL' : '(min-width : 90em)', // 1440px
+        'desktopXL' : '(min-width : 120em)' // 1920px
+    )
+);
+
+

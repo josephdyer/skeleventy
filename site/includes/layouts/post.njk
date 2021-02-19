@@ -1,107 +1,109 @@
 ---
-layout: default
+layout: base
 ---
 
-{# a post layout #}
-<main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
+<main id="main" class="main inner box-flex pt-900 pb-600" tabindex="-1">
 
-    <article id="container-centre" class="column centre flex-1">
+    <article id="container-centre" class="column centre">
 
-        <div class="mb-12 md:mb-20">
+        <header class="page-header length-optimal mb-1000 pb-500">
 
-            <header>
-                <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">{{ title }}</h1>
-            </header>
+            <h1 class="post-title">{{ title }}</h1>
 
-            <div class="text-sm md:text-base text-gray-600 flex justify-center">
+            {% if sub_heading %}
 
-                <p class="author">By {{ site.author.name }}</p>
+                <p class="sub-heading">{{ sub_heading }}</p>
 
-                <p class="px-2">—</p>
+            {% endif %}
 
-                <time datetime="{{ date }}">
-                    {{ date | dateDisplay }}
-                </time>
+            <div class="post-meta box-flex mt-800 text-400">
+
+                <time class="datetime" datetime="{{ date | timestamp }}">{{ date | dateDisplay }}</time>
 
                 {% if tags %}
 
-                    {# this will create a comma for multiple category links #}
-                    {% set comma = joiner() %}
+                    <div class="box-flex">
 
-                    <p class="px-2">—</p>
+                        <ul class="categories">
 
-                    <p class="category">Posted in
+                            {# this will create a comma for multiple category links #}
+                            {% set comma = joiner() %}
 
-                        {% for item in tags %}
+                            {% for item in tags %}
 
-                            {%- if item != "blog" -%}
+                                {%- if item !== 'blog' -%}
 
-                                <a href="/category/{{ item }}">{{ comma() }} {{ item | capitalize }}</a>
+                                    <li class="category"><a href="/categories/{{ item }}">{{ comma() }} {{ item | capitalize }}</a></li>
 
-                            {%- endif -%}
+                                {%- endif -%}
 
-                        {% endfor %}
+                            {% endfor %}
 
-                    </p>
+                        </ul>
+
+                    </div>
 
                 {% endif %}
 
             </div>
 
-            {# featured post image #}
-            {% if featured_image %}
+        </header>
 
-                <figure class="mt-10 md:mt-20">
+        {# featured post image #}
+        {% if post_image %}
 
-                    <img data-lazy="{{ featured_image }}" alt="{{ image_caption }}">
+            <figure class="post-image bg-white pt-600 pr-600 pl-600 mb-1000">
 
-                    {% if image_caption %}
+                <img data-src="{{ post_image }}" alt="{{ image_alt }}">
 
-                        <figcaption class="text-center text-sm italic text-gray-600 mt-4">{{ image_caption }}</figcaption>
+                {% if image_alt %}
+                    <figcaption class="post-image-caption bg-white color-primary pt-600 pb-600 text-400">{{ image_alt }}</figcaption>
+                {% endif %}
 
-                    {% endif %}
+            </figure>
 
-                </figure>
+        {% endif %}
 
-            {% endif %}
-
-        </div>
-
-        <div class="content post md:px-16">
+        <div class="content flow length-optimal">
 
             {{ content | safe }}
 
-            {# category links list #}
-            {% if tags %}
-
-                <ul class="flex pt-4">
-
-                    {% for item in tags %}
-
-                        {%- if item != "blog" -%}
-
-                            <li class="mr-2">
-                                <a class="inline-block px-3 py-2 text-white bg-purple-900 text-xs font-semibold rounded hover:text-white hover:bg-pink-500" href="/category/{{ item }}">{{ item | capitalize }}</a>
-                            </li>
-
-                        {%- endif -%}
-
-                    {% endfor %}
-
+            <nav class="pagination mb-1000" aria-label="Pagination">
+                <ul class="items text-400 tablet:box-flex">
+                    {% if previous_post %}<li class="mb-300"><span class="weight-bold">Previous:</span> <a href="{{ previous_post.url }}">{{ previous_post.data.title }}</a></li>{% endif %}
+                    {% if next_post %}<li><span class="weight-bold">Next:</span> <a href="{{ next_post.url }}">{{ next_post.data.title }}</a></li>{% endif %}
                 </ul>
+            </nav>
 
-            {% endif %}
-
-        </div>
-
-        <div class="mt-16 md:px-16">
-
-            <div class="flex justify-between mt-16 border-t border-gray-200 pt-12">
-                {% if prevPost %}<p class="text-gray-700 text-sm"><span>Previous:</span> <a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a></p>{% endif %}
-                {% if nextPost %}<p class="text-gray-700 text-sm"><span>Next:</span> <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
-            </div>
         </div>
 
     </article>
 
+    {# schema #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ title | truncate(110) }}",
+        {% if post_image %}
+        "image": "{{ site.url }}{{ post_image }}",
+        {% endif %}
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.author.name }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.name }}",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/images/meta/article-schema.png"
+            }
+        },
+        "datePublished": "{{ date | timestamp }}",
+        "dateModified": "{{ date | timestamp }}"
+    }
+    </script>
+
 </main>
+

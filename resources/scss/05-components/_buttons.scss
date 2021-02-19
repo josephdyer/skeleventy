@@ -1,0 +1,17 @@
+
+//========== Buttons ==========//
+
+.button {
+    display: inline-block;
+    background-color: get-color('secondary');
+    border: 0;
+    border-radius: v(border-radius);
+    color: get-color('primary');
+    padding: get-size('300') get-size('500');
+    transition: background-color v(transition-duration) v(transition-timing);
+    @include apply-utility('weight', 'bold');
+
+    &:hover {
+        @include apply-utility('bg', 'white');
+    }
+}

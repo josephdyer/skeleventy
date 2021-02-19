@@ -1,0 +1,57 @@
+---
+layout: base
+---
+
+<main id="main" class="main inner box-flex pt-800 pb-1100" tabindex="-1">
+
+    <article id="container-centre" class="column centre">
+
+        <header class="page-header">
+
+            <h1 class="page-title">{{ title }}</h1>
+
+            {% if sub_heading %}
+
+                <p class="sub-heading">{{ sub_heading }}</p>
+
+            {% endif %}
+
+        </header>
+
+        <div class="content flow">
+
+            {{ content | safe }}
+
+            <form class="form pt-400">
+
+                <div class="row mb-500">
+                    <label class="text-400 weight-bold" for="name">Name</label>
+                    <input class="input width-full" id="name" type="text" name="name" autocomplete="name" required>
+                </div>
+
+                <div class="row mb-500">
+                    <label class="text-400 weight-bold" for="email">Email</label>
+                    <input class="input width-full" id="email" type="text" name="email" autocapitalize="off" autocomplete="email" required>
+                </div>
+
+                <div class="row mb-500">
+                    <label class="text-400 weight-bold" for="phone">Phone</label>
+                    <input class="input width-full" id="phone" type="text" name="phone" autocomplete="tel" required>
+                </div>
+
+                <div class="row mb-800">
+                    <label class="text-400 weight-bold" for="message">Message</label>
+                    <textarea class="textarea width-full" id="message" name="message"></textarea>
+                </div>
+
+                <div class="row">
+                    <button class="button text-400" type="submit">Send message</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </article>
+
+</main>

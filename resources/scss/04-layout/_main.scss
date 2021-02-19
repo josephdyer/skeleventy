@@ -1,0 +1,25 @@
+
+//==========  Main  ==========//
+
+.main {
+    flex-direction: column;
+    flex: 1;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+// page header
+.page-header {
+    --gap: #{get-size('800')};
+    margin-bottom: v(gap);
+}
+
+@include media-query('tablet') {
+
+    .page-header {
+        --gap: #{get-size('900')};
+    }
+}
+

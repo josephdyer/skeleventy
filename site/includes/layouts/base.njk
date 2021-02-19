@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ meta_title if meta_title else title }} | {{ site.name }}</title>
+
+    {# include main.css if in development mode #}
+    {% if helpers.environment === 'development' %}
+        <link rel="stylesheet" href="/css/main.css">
+    {% else %}
+        <link rel="stylesheet" href="/css/main.min.css">
+    {% endif %}
+
+    {# include javascript #}
+    <script src="/js/{{ 'main.js' if helpers.environment === 'development' else 'main.min.js' }}" defer></script>
+
+    {# page meta #}
+    <meta name="description" content="{{ meta_description | truncate(140) if meta_description else content | striptags | truncate(140) }}">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="{{ robots if robots else 'index,follow' }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    {# include social meta tags #}
+    {% include "components/social-meta.njk" %}
+
+    {# include favicon, fonts, etc #}
+    <link rel="icon" type="image/svg+xml" href="{{ site.images.favicon_svg }}">
+    <link rel="icon" type="image/png" href="{{ site.images.favicon }}">
+    <link rel="apple-touch-icon" href="{{ site.images.apple_touch_icon }}" sizes="180x180">
+</head>
+
+
+<body id="page-{{ page.fileSlug if page.fileSlug else 'home' }}" class="type-{{ layout | lower }} page-{{ page.fileSlug if page.fileSlug else 'home' }} bg-primary color-white font-base leading-normal">
+
+    <a class="sr-only" href="#main">Skip to content</a>
+
+    <div id="wrapper" class="wrapper box-flex pb-900">
+
+        {# include header #}
+        {% include "components/header.njk" %}
+
+        {# include content #}
+        {{ content | safe }}
+
+        {# include footer #}
+        {% include "components/footer.njk" %}
+
+    </div>
+
+    {# include mobile nav #}
+    {% include "components/mobile-nav.njk" %}
+
+</body>
+</html>

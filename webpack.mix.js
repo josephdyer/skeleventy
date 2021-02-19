@@ -1,24 +1,14 @@
 
-let mix = require('laravel-mix')
-let tailwindcss = require('tailwindcss')
+//==========  Laravel Mix  ==========//
+
+const mix = require('laravel-mix')
+const path = require('path')
 require('laravel-mix-purgecss')
 
-// Paths
-const paths = {
-    sass: {
-        source: './resources/sass/main.scss',
-        dest: 'css/'
-    },
-    javascript: {
-        source: './resources/js/main.js',
-        singles: './resources/js/singles/*',
-        dest: 'js/'
-    }
-}
-
-// Run mix
+// Run Mix
 mix
 
+    // cleaner aliases for js module imports (optional)
     .webpackConfig({
         resolve: {
             alias: {
@@ -28,64 +18,29 @@ mix
         }
     })
 
-    // Concatenate & Compile Javascript
-    .js(paths.javascript.source, paths.javascript.dest)
+    // Compile Javascript
+    .js('resources/js/main.js', 'js/')
 
-    // Compile singles
-    // .js(paths.javascript.singles, paths.javascript.dest)
+    // Compile SCSS
+    .sass('resources/scss/main.scss', 'css/')
+    .options({ processCssUrls: false })
 
-    // Compile SCSS & TailwindCSS
-    .sass(paths.sass.source, paths.sass.dest)
-    .options({
-        processCssUrls: false,
-        postCss: [tailwindcss('tailwind.config.js')]
-    })
 
-    // Production only
-    if ( mix.inProduction() )
-    {
+// Production only
+if ( mix.inProduction() )
+{
 
-        // Remove any unused CSS using Purge
-        mix
+    // Purge our CSS
+    // mix minifies CSS & JS by default
+    // I prefer to add the `.min` suffix on the output files just for convention
+    mix.purgeCss({
+            content: ['site/**/*.njk'],
+            safelist: ['menu-visible', 'loaded', 'expanded', /^type-/, /^page-/, /[data-src]/],
+            extractorPattern: [/[^<>"'`\s]*[^<>"'`\s:]/g]
+        })
+        .minify('css/main.css')
+        .minify('js/main.js')
 
-            .purgeCss({
-                folders: [
-                    'site'
-                ],
-                extensions: [
-                    'html',
-                    'njk'
-                ],
-                whitelist: [
-                    'body',
-                    'html',
-                    'a',
-                    'h1',
-                    'h2',
-                    'h3',
-                    'h4',
-                    'p',
-                    'blockquote',
-                    'breadcrumbs',
-                    'content',
-                    'form',
-                    'input',
-                    'textarea',
-                    'intro',
-                    'btn',
-                    'loaded',
-                    'page-title',
-                    'required',
-                    'row',
-                    'visually-hidden',
-                    'menu-visible'
-                ]
-            })
-
-            // Minifies CSS & JS files
-            .minify(paths.sass.dest + 'main.css')
-            .minify(paths.javascript.dest + 'main.js')
-
-    }
+}
 
 

@@ -1,0 +1,18 @@
+
+//========== Social icons ==========//
+
+.social-icons {
+
+    .icon-link {
+
+        &:hover {
+            @include apply-utility('color', 'secondary');
+        }
+    }
+
+    .icon {
+        --social-icon-size: #{get-size('500')};
+        width: v(social-icon-size);
+        height: v(social-icon-size);
+    }
+}

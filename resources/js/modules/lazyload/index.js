@@ -5,7 +5,7 @@ const Lazyload = function Lazyload()
 {
 
     // lazyload our images
-    const images = $$.wrapper.querySelectorAll('[data-lazy]')
+    const images = $$.wrapper.querySelectorAll('[data-src]')
 
     if ( exists(images) )
     {
@@ -15,19 +15,17 @@ const Lazyload = function Lazyload()
             threshold: 0.5
         }
 
-        const preloadImage = function preloadImage(img) {
+        const preloadImage = (img) => {
 
-            // find and store the image's data-lazy attribute
-            // commented out for now, but if you want to go the extra mile, then you can do all the srcset attribute stuff on the images ;)
-            // const srcset = img.dataset.srcset
-            const src = img.dataset.lazy
+            // find and store the image's data-load attribute
+            const src = img.dataset.src
 
             img.src = src
-            // img.srcset = srcset
 
             // add a class of loaded
             // we can then use this as a hook for fade-in animations etc
             img.classList.add('loaded')
+            img.removeAttribute('data-src')
 
         }
 

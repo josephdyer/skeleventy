@@ -1,0 +1,24 @@
+
+//========== Links ==========//
+
+a {
+    text-decoration: none;
+    transition: color v(transition-duration) v(transition-timing);
+
+    &:not([class]) {
+        color: currentColor;
+        border-bottom: v(border-size) solid get-color('secondary');
+        padding-bottom: .1rem;
+        text-decoration-skip-ink: auto;
+
+        &:hover {
+            @include apply-utility('color', 'secondary');
+        }
+    }
+}
+
+:focus {
+    outline: 1px solid get-color('secondary');
+    outline-offset: .25rem;
+}
+

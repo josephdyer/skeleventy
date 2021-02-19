@@ -1,0 +1,82 @@
+---
+layout: base
+pagination:
+ data: collections.blog
+ size: 3
+ alias: blogs
+---
+
+<main id="main" class="main box-flex" tabindex="-1">
+
+    <article id="container-centre" class="column centre">
+
+        <header class="page-header inner pt-700 pb-600">
+
+            <h1 class="page-title">{{ title }}</h1>
+
+            {% if content %}
+
+                <div class="sub-heading">{{ content | safe }}</div>
+
+            {% endif %}
+
+        </header>
+
+    </article>
+
+    <div class="bg-white pt-1100 pb-1100">
+
+        <div class="posts inner box-grid">
+
+            {% for post in blogs %}
+
+                <article class="card">
+
+                    {# post image #}
+                    {% if post.data.post_image %}
+
+                        <a class="box-block" href="{{ post.url }}">
+
+                            <span class="card-header box-block">
+
+                                <span class="card-categories">
+
+                                    {% for item in post.data.tags %}
+
+                                        {%- if item !== 'blog' -%}
+
+                                            <span class="category box-block bg-secondary color-primary text-300">{{ item | capitalize }}</span>
+
+                                        {%- endif -%}
+
+                                    {% endfor %}
+
+                                </span>
+
+                                <img class="card-image" data-src="{{ post.data.post_image }}" alt="{{ post.data.image_alt }}">
+
+                            </span>
+
+                        </a>
+
+                    {% endif %}
+
+                    <div class="card-content pt-700 pb-900 pl-300 pr-300">
+
+                        <h2><a class="card-title-link color-primary weight-regular hover-color-secondary" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+
+                        <time class="datetime color-grey text-400" datetime="{{ post.date | timestamp }}">
+                            {{ post.date | dateDisplay }}
+                        </time>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</main>
