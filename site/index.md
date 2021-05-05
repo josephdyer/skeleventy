@@ -3,7 +3,7 @@ layout: home
 meta_title: Carlos Ochoa
 meta_description: Skeleventy gives you a rock solid foundation to build fast and accessible static websites.
 title: Carlos Ochoa
-sub_heading: Skeleventy gives you a rock solid foundation to build fast and accessible static websites.
+sub_heading: To be discussed.
 eleventyNavigation:
   key: Home
   order: 1
