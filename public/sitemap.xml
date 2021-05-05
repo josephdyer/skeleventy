@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://skeleventy.netlify.app/blog/post-1/</loc>
+        <lastmod>2018-09-30</lastmod>
+    </url>
+    <url>
+        <loc>https://skeleventy.netlify.app/blog/post-2/</loc>
+        <lastmod>2019-10-30</lastmod>
+    </url>
+    <url>
+        <loc>https://skeleventy.netlify.app/blog/post-3/</loc>
+        <lastmod>2019-11-15</lastmod>
+    </url>
+    <url>
+        <loc>https://skeleventy.netlify.app/about/</loc>
+        <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+        <loc>https://skeleventy.netlify.app/contact/</loc>
+        <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+        <loc>https://skeleventy.netlify.app/</loc>
+        <lastmod>2021-04-27</lastmod>
+    </url>
+</urlset>
